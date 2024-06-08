@@ -14,19 +14,16 @@ import org.springframework.stereotype.Service;
 public class CompanyService implements CrudOperation<Company> {
 
     @Autowired
-    private final CompanyRepository billingPaymentsRepository;
+    private final CompanyRepository CompanyRepository;
     @Override
     public ResponseEntity<?> addElement(Company element) {
         return null;
     }
 
     @Override
-    public ResponseEntity<?> deleteElement(Company idElement) {
+    public ResponseEntity<?> deleteElement(int idElement) {
         return null;
     }
 
-    @Override
-    public ResponseEntity<Company> getAllElement() {
-        return null;
-    }
+
 }

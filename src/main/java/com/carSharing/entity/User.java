@@ -40,6 +40,9 @@ public class User {
     @Column(name ="stato_attivazione_utente")
     private boolean userActive;
 
+    @Column(name ="delete_flag")
+    private boolean deleteFlag;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "Utenti_Abbonamenti",
             joinColumns = @JoinColumn(name = "ID_utente",referencedColumnName = "ID_utente"),

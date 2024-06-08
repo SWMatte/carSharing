@@ -14,19 +14,16 @@ import org.springframework.stereotype.Service;
 public class MaintenanceService implements CrudOperation<Maintenance> {
 
     @Autowired
-    private final MaintenanceRepository billingPaymentsRepository;
+    private final MaintenanceRepository MaintenanceRepository;
     @Override
     public ResponseEntity<?> addElement(Maintenance element) {
         return null;
     }
 
     @Override
-    public ResponseEntity<?> deleteElement(Maintenance idElement) {
+    public ResponseEntity<?> deleteElement(int idElement) {
         return null;
     }
 
-    @Override
-    public ResponseEntity<Maintenance> getAllElement() {
-        return null;
-    }
+
 }

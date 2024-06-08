@@ -44,6 +44,7 @@ public class BillingPayments {
     @JoinColumn(name ="ID_prenotazione")
     private Booking booking;
 
-
+    @Column(name ="delete_flag")
+    private boolean deleteFlag;
 
 }

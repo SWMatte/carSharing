@@ -55,5 +55,7 @@ public class Car {
     @JoinColumn(name = "ID_assicurazione")
     private InsuranceCompany insuranceCompany;
 
+    @Column(name ="delete_flag")
+    private boolean deleteFlag;
 
 }

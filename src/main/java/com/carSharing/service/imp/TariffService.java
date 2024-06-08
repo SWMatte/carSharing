@@ -14,19 +14,16 @@ import org.springframework.stereotype.Service;
 public class TariffService implements CrudOperation<Tariff> {
 
     @Autowired
-    private final TariffRepository billingPaymentsRepository;
+    private final TariffRepository TariffRepository;
     @Override
     public ResponseEntity<?> addElement(Tariff element) {
         return null;
     }
 
     @Override
-    public ResponseEntity<?> deleteElement(Tariff idElement) {
+    public ResponseEntity<?> deleteElement(int idElement) {
         return null;
     }
 
-    @Override
-    public ResponseEntity<Tariff> getAllElement() {
-        return null;
-    }
+
 }

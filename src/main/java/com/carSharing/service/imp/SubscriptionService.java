@@ -14,19 +14,16 @@ import org.springframework.stereotype.Service;
 public class SubscriptionService implements CrudOperation<Subscription> {
 
     @Autowired
-    private final SubscriptionRepository billingPaymentsRepository;
+    private final SubscriptionRepository SubscriptionRepository;
     @Override
     public ResponseEntity<?> addElement(Subscription element) {
         return null;
     }
 
     @Override
-    public ResponseEntity<?> deleteElement(Subscription idElement) {
+    public ResponseEntity<?> deleteElement(int idElement) {
         return null;
     }
 
-    @Override
-    public ResponseEntity<Subscription> getAllElement() {
-        return null;
-    }
+
 }

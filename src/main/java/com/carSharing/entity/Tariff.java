@@ -29,6 +29,9 @@ public class Tariff {
     @Enumerated(EnumType.STRING)
     private Cost cost;
 
+    @Column(name ="delete_flag")
+    private boolean deleteFlag;
+
     @ManyToMany(mappedBy = "tariffs", fetch = FetchType.LAZY)
     private List<Subscription> subscriptions;
 }

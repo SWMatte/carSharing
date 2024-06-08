@@ -47,4 +47,7 @@ public class InsuranceCompany {
 
     @Column(name = "note_aggiuntive")
     private String note;
+
+    @Column(name ="delete_flag")
+    private boolean deleteFlag;
 }

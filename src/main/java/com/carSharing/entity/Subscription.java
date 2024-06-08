@@ -34,6 +34,8 @@ public class Subscription {
     @ManyToMany(mappedBy = "subscription", fetch = FetchType.LAZY)
     private List<User> users;
 
+    @Column(name ="delete_flag")
+    private boolean deleteFlag;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "Abbonamenti_Tariffe",

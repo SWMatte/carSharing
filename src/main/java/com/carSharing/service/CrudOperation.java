@@ -10,10 +10,10 @@ public interface CrudOperation <T>{
 
     ResponseEntity<?> addElement(T element);
 
-    ResponseEntity<?> deleteElement(T idElement);
+    ResponseEntity<?> deleteElement(int idElement);
 
 
-    ResponseEntity<T> getAllElement();
+
 
 
 }

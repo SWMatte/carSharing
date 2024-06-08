@@ -44,6 +44,7 @@ public class Maintenance {
     @JoinColumn(name = "ID_mezzo")
     private Car car;
 
-
+    @Column(name ="delete_flag")
+    private boolean deleteFlag;
 
 }

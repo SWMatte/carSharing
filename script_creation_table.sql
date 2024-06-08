@@ -12,7 +12,8 @@ CREATE TABLE Utenti (
     password VARCHAR(255),
     numero_telefono VARCHAR(20),
     indirizzo VARCHAR(255),
-    stato_attivazione_utente BOOLEAN
+    stato_attivazione_utente BOOLEAN,
+    delete_flag BOOLEAN default false
 );
 
 -- Tabella Abbonamenti
@@ -20,14 +21,19 @@ CREATE TABLE Abbonamenti (
     ID_abbonamento INT AUTO_INCREMENT PRIMARY KEY,
     tipo_abbonamento ENUM("SEMESTRALE,BIENNALE,ANNUALE"),
     costo_abbonamento int(50),
-    descrizione TEXT
+    descrizione TEXT,
+    delete_flag BOOLEAN default false
+
 );
 
 -- Tabella Tariffe
 CREATE TABLE Tariffe (
     ID_tariffa INT AUTO_INCREMENT PRIMARY KEY,
     tipo_tariffa ENUM("F0","F1","F2F3"),  -- tipo di tariffa oraria x abbonamento
-    costo ENUM('10','100','1000') -- in bse al tipo di tariffa
+    costo ENUM('10','100','1000'), -- in bse al tipo di tariffa
+    delete_flag BOOLEAN default false
+
+
 );
 
 -- Tabella Aziende
@@ -36,7 +42,8 @@ CREATE TABLE Aziende (
     nome VARCHAR(255),
     indirizzo VARCHAR(255),
     partita_IVA VARCHAR(20),
-    informazioni_contatto TEXT
+    informazioni_contatto TEXT,
+    delete_flag BOOLEAN default false
 );
 
 -- Tabella Assicurazione
@@ -49,7 +56,8 @@ CREATE TABLE Assicurazione (
     tipo_copertura VARCHAR(255),
     premio int(50),
     contatto_emergenza VARCHAR(20),
-    note_aggiuntive TEXT
+    note_aggiuntive TEXT,
+    delete_flag BOOLEAN default false
 );
 -- Tabella Mezzi
 CREATE TABLE Mezzi (
@@ -64,6 +72,7 @@ CREATE TABLE Mezzi (
     ultima_manutenzione DATE,
     ID_azienda INT,
     ID_assicurazione INT,
+    delete_flag BOOLEAN default false,
     FOREIGN KEY (ID_azienda) REFERENCES Aziende(ID_azienda),
     FOREIGN KEY (ID_assicurazione) REFERENCES Assicurazione(ID_assicurazione)
 );
@@ -79,6 +88,7 @@ CREATE TABLE Prenotazioni (
     ID_utente INT,
     ID_mezzo INT,
     ID_tariffa INT,
+    delete_flag BOOLEAN default false,
     FOREIGN KEY (ID_utente) REFERENCES Utenti(ID_utente),
     FOREIGN KEY (ID_mezzo) REFERENCES Mezzi(ID_mezzo),
     FOREIGN KEY (ID_tariffa) REFERENCES Tariffe(ID_tariffa)
@@ -93,6 +103,7 @@ CREATE TABLE Fatturazione_Pagamenti (
     metodo_pagamento ENUM("BANCOMAT","CONTANTI","BONIFICO"),
     stato_pagamento ENUM('PAGATO', 'NON_PAGATO','IN_ATTESA'),
     pdf_fattura VARCHAR(50),
+    delete_flag BOOLEAN default false,
     FOREIGN KEY (ID_prenotazione) REFERENCES Prenotazioni(ID_prenotazione)
 );
 -- Tabella Manutenzione
@@ -104,6 +115,7 @@ CREATE TABLE Manutenzione (
     tipo_manutenzione VARCHAR(100),
     costo int(50),
     note TEXT,
+    delete_flag BOOLEAN default false,
     FOREIGN KEY (ID_mezzo) REFERENCES Mezzi(ID_mezzo),
     FOREIGN KEY (ID_azienda) REFERENCES Aziende(ID_azienda)
 );

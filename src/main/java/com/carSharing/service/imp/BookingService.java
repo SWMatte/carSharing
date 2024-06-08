@@ -14,19 +14,16 @@ import org.springframework.stereotype.Service;
 public class BookingService implements CrudOperation<Booking> {
 
     @Autowired
-    private final BookingRepository billingPaymentsRepository;
+    private final BookingRepository BookingRepository;
     @Override
     public ResponseEntity<?> addElement(Booking element) {
         return null;
     }
 
     @Override
-    public ResponseEntity<?> deleteElement(Booking idElement) {
+    public ResponseEntity<?> deleteElement(int idElement) {
         return null;
     }
 
-    @Override
-    public ResponseEntity<Booking> getAllElement() {
-        return null;
-    }
+
 }

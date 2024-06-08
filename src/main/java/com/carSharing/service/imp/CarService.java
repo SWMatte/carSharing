@@ -14,19 +14,16 @@ import org.springframework.stereotype.Service;
 public class CarService implements CrudOperation<Car> {
 
     @Autowired
-    private final CarRepository billingPaymentsRepository;
+    private final CarRepository CarRepository;
     @Override
     public ResponseEntity<?> addElement(Car element) {
         return null;
     }
 
     @Override
-    public ResponseEntity<?> deleteElement(Car idElement) {
+    public ResponseEntity<?> deleteElement(int idElement) {
         return null;
     }
 
-    @Override
-    public ResponseEntity<Car> getAllElement() {
-        return null;
-    }
+
 }

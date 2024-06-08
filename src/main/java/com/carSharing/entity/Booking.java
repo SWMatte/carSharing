@@ -52,4 +52,7 @@ public class Booking {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="ID_tariffa")
     private Tariff tariff;
+
+    @Column(name ="delete_flag")
+    private boolean deleteFlag;
 }

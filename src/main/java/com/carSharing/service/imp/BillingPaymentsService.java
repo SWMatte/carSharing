@@ -14,19 +14,16 @@ import org.springframework.stereotype.Service;
 public class BillingPaymentsService implements CrudOperation<BillingPayments> {
 
     @Autowired
-    private final BillingPaymentsRepository billingPaymentsRepository;
+    private final BillingPaymentsRepository BillingPaymentsRepository;
     @Override
     public ResponseEntity<?> addElement(BillingPayments element) {
         return null;
     }
 
     @Override
-    public ResponseEntity<?> deleteElement(BillingPayments idElement) {
+    public ResponseEntity<?> deleteElement(int idElement) {
         return null;
     }
 
-    @Override
-    public ResponseEntity<BillingPayments> getAllElement() {
-        return null;
-    }
+
 }

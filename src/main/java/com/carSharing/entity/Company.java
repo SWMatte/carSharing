@@ -30,4 +30,7 @@ public class Company {
 
     @Column(name ="informazioni_contatto")
     private String companyInformation;
+
+    @Column(name ="delete_flag")
+    private boolean deleteFlag;
 }
