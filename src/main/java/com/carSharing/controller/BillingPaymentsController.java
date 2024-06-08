@@ -1,6 +1,7 @@
 package com.carSharing.controller;
 
 
+import com.carSharing.entity.BillingPayments;
 import com.carSharing.entity.User;
 import com.carSharing.service.CrudOperation;
 import lombok.AllArgsConstructor;
@@ -12,14 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/v1/")
 @AllArgsConstructor
-public class UserController {
+public class BillingPaymentsController {
 
     @Autowired
-    private final CrudOperation<User> crudOperation;
+    private final CrudOperation<BillingPayments> crudOperation;
 
-    @GetMapping("user")
-    public String getUser(){
-        return "USERRR";
-    }
+
 
 }
