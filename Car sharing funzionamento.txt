@@ -1,0 +1,44 @@
+CAR SHARING COME DOVREBBE ESSERE SVILUPPATO
+
+
+CLASSE USER: utenti che possono avere piu abbonamenti associati 
+
+Subscription: un utente puo avere piu abbonamenti o non averne, l'abbonamento ha una durata diversa. e puo essere collegato a delle tariffe e in base alla tariffa
+a cui è collegato costSubscription assumera' un valore specifico, che poi' l'utente dovra' pagare, l'utente che fara' una get per i tipo di abbonamenti non riceve il costo subscription
+inizialmente in quanto fin quando non verra' elaborato il pagamento  potresti solo vedere " cosa sto comprando " , successivamente la get degli abbonamenti 
+mostrera' quali hai + il costo per ognuno.
+
+
+Tariff : in base alla tipologia di tariffa in questione si ha un costo diverso e la tariffa è collegata alla subscription con la logica che ho scritto sopra
+
+
+Maintenance: questa classe per la manutenzione mi definisce il costo della manutenzione  in base al tipo manutenzione che bisogna effettuare 
+immagino una sorta di tiketing, l'azienda X  mi chiama una creazione di questa classe passando il veicolo Y con tipo manutenzione e costo
+
+
+
+InsuranceCompany: compagnia assicurativa, del tipo SARA, UNIPOL, etc dovrebbe essere collegata a many to many con Company in quanto 
+una compagnia assicurativa puo essere legata a piu aziende e piu aziende possono essere collegate a piu compagnie assicurative avendo 
+tipologie di assicurazioni diverse magari anche per la stesa ho sia annuale che semestrale
+
+
+
+Classe company da mettere la many to many con insuranceCompany
+
+
+classe Car: dopo aver creato le aziende queste hanno dei veicoli piu di uno, e dato che senza assicurazione è illegale prima di creare il veicolo
+devi fare un check su l'assicurazione che ha l'azienda X, se è valida rispetto alla data odierna allora crei il veicolo questo perche' creo una many to many tra insurancecompany e company
+
+
+
+classe booking:  rimozione di Tariff che non ha senso, io posso poi risalire al tipo di abbonamento che ha un utente attraverso l'user che è collegato a subscription
+
+facendo una prenotazione (booking) passo un user e il veicolo che voglio prenotare  posso aggiungere qua ivari check che siano a posto ovvero user attivo e  quel veicolo assicurato e in base al luogo ritiro e luogo riconsegna posso effettuare un costo totale della prenotazione
+ nella prenotazione io devo ottenere in qualche modo l'abbonamento che l'utnete vuole utilizzare
+
+
+
+billingPayments : possso collegare il booking, cioe la prenotazione,  a  billingpayment  e in base al tipo di abbonamento che sta cercando di prenotare
+prendo la tariffa e definisco un prezzo toale che dovra' pagare l'utente il metodo di pagamento che viene effettuato e lo stato verra' cambiato successivamente
+
+

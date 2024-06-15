@@ -42,7 +42,7 @@ public class UserService extends MethodClass implements CrudOperation<User>, iUs
         if (!Utils.isNull(user)) {
             user.setDeleteFlag(true);
             userRepository.save(user);
-            log.info("Start" + getCurrentClassName() + "get into: " + getCurrentMethodName());
+            log.info("End method " + getCurrentMethodName());
             return ResponseEntity.ok(HttpStatus.OK);
         }
         return null;
@@ -55,6 +55,7 @@ public class UserService extends MethodClass implements CrudOperation<User>, iUs
             log.info("Start" + getCurrentClassName() + "get into: " + getCurrentMethodName());
             User user = userRepository.findByEmail(email);
             if (!Utils.isNull(user) && !user.isDeleteFlag()) {
+                log.info("End method " + getCurrentMethodName());
                 return ResponseEntity.ok(user);
             } else {
                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("This account have been deleted from the database");
